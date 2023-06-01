@@ -44,22 +44,22 @@ const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 const time2 = moment().tz('Asia/Kolkata').format('HH:mm:ss')  
  if(time2 < "23:59:00"){
-var ucapanWaktu = 'Good night ðŸŒŒ'
+var ucapanWaktu = 'Good night'
  }
  if(time2 < "19:00:00"){
-var ucapanWaktu = 'Good afternoon ðŸŒƒ'
+var ucapanWaktu = 'Good afternoon'
  }
  if(time2 < "18:00:00"){
-var ucapanWaktu = 'Good afternoon ðŸŒ…'
+var ucapanWaktu = 'Good afternoon'
  }
  if(time2 < "15:00:00"){
-var ucapanWaktu = 'Good afternoon ðŸ™'
+var ucapanWaktu = 'Good afternoon'
  }
  if(time2 < "11:00:00"){
-var ucapanWaktu = 'Good morning ðŸŒ„'
+var ucapanWaktu = 'Good morning'
  }
  if(time2 < "05:00:00"){
-var ucapanWaktu = 'Good morning ðŸŒ‰'
+var ucapanWaktu = 'Good morning'
  } 
 
 // read database
@@ -104,7 +104,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
-        var prefix = prefa ? /^[Â°â€¢Ï€Ã·Ã—Â¶âˆ†Â£Â¢â‚¬Â¥Â®â„¢+âœ“_=|~!?@#$%^&.Â©^]/gi.test(body) ? body.match(/^[Â°â€¢Ï€Ã·Ã—Â¶âˆ†Â£Â¢â‚¬Â¥Â®â„¢+âœ“_=|~!?@#$%^&.Â©^]/gi)[0] : "" : prefa ?? global.prefix
+        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
