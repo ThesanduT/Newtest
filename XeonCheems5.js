@@ -165,28 +165,6 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
         const antiWame = m.isGroup ? ntwame.includes(from) : false
         const antiToxic = m.isGroup ? nttoxic.includes(from) : false
-        const sotoy = [
-		'ðŸŠ : ðŸ’ : ðŸ',
-		'ðŸ’ : ðŸ”” : ðŸŠ',
-		'ðŸ‡ : ðŸ‡ : ðŸ‡',
-		'ðŸŠ : ðŸ‹ : ðŸ””',
-		'ðŸ”” : ðŸ’ : ðŸ',
-		'ðŸ”” : ðŸ’ : ðŸŠ',
-        'ðŸŠ : ðŸ‹ : ðŸ””',		
-		'ðŸ : ðŸ’ : ðŸ‹',
-		'ðŸ : ðŸ : ðŸ',
-		'ðŸŠ : ðŸ’ : ðŸ’',
-		'ðŸ”” : ðŸ”” : ðŸ‡',
-		'ðŸŒ : ðŸ’ : ðŸ””',
-		'ðŸ : ðŸ”” : ðŸ””',
-		'ðŸŠ : ðŸ‹ : ðŸ’',
-		'ðŸ‹ : ðŸ‹ : ðŸŒ',
-		'ðŸ”” : ðŸ”” : ðŸ‡',
-		'ðŸ”” : ðŸ : ðŸ‡',
-		'ðŸ”” : ðŸ”” : ðŸ””  Win',
-		'ðŸ’ : ðŸ’ : ðŸ’ Win',
-		'ðŸŒ : ðŸŒ : ðŸŒ Lose'
-		]
 
 	try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
@@ -1161,14 +1139,6 @@ break
                     m.reply("Time has run out\nAnswer: " + kuismath[m.sender.split('@')[0]])
                     delete kuismath[m.sender.split('@')[0]]
                 }
-            }
-            break
-            
-            case 'slot': {
-            const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
-            let sloth =`[  ðŸŽ°VIRTUAL SLOT ðŸŽ°  ]\n------------------------\n\nðŸ’ : ðŸŒ : ðŸ‡\n${somtoy}<=====\nðŸ‡ : ðŸŒ : ðŸ’\n\n------------------------\n[  ðŸŽ° VIRTUAL SLOT ðŸŽ°  ]\n\n*Information* :\n_If you get 3 of the same fruit_\n_Means You Win_\n\n_Example : ðŸ’ : ðŸ’ : ðŸ’_ <=====`
-            let buttons = [{ buttonId: 'slot', buttonText: { displayText: 'ðŸŽ°PLAY AGAINðŸŽ°' }, type: 1 }]
-            await XeonBotInc.sendButtonText(m.chat, buttons, sloth, botname, m)
             }
             break
             case 'soulmate': {
