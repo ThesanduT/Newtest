@@ -1,5 +1,9 @@
 FROM node:lts-buster
 
+RUN git clone https://github.com/ThesanduT/Newtest /root/ThesanduT
+
+WORKDIR /root/ThesanduT/
+
 RUN apt-get update && \
   apt-get install -y \
   ffmpeg \
@@ -7,11 +11,15 @@ RUN apt-get update && \
   webp && \
   apt-get upgrade -y && \
   rm -rf /var/lib/apt/lists/*
+  
+RUN npm install -g npm@8.11.0
 
-COPY package.json .
+RUN npm install -g nodemon 
 
-RUN npm install
+RUN npm install -g forever
 
-COPY . .
+RUN npm i cfonts
 
-CMD ["node", "."]
+RUN npm i -g heroku
+
+CMD ["npm", "start"]
